@@ -1,0 +1,51 @@
+<!Doctype html>
+<html>
+<head>
+<title>Registration
+</title>
+<style>
+body {
+  background-image: url("Q.jpg");
+  background-repeat:no-repeat;
+  background-position: 380px 100px;
+  background-size: 800px 200px;
+}
+div
+{
+  padding-top: 300px;
+  padding-left: 600px;
+}
+</style>
+</head>
+<body>
+<form action="register.php" method="post">
+<div>
+<h3>Username  :<input type="text" name="username"></h3>
+<br>		
+<h3>Email 	  :<input type="text" name="email"></h3>
+</h3><br>
+<h3>Password  :<input type="password" name="pw" Id="pw"></h3><br>
+<h3>Re-Enter Password:<input type="password" onkeyup="Validate(this.value)"></h3>
+<h4 id="valid" > </h4> 
+<br>
+<input type="submit" value="Register" name="register">
+<br>
+</div>
+</form>
+<script>
+function Validate(str) {
+  var str1=document.getElementById("pw").value;
+  	document.getElementById("valid").innerHTML="";
+  if (str.length > 0) {
+		for(i=0;i<str.length;i++)
+			if(str[i]!=str1[i])
+			document.getElementById("valid").innerHTML="password don't match";
+    return;
+  }
+  return;
+}
+
+</script>
+
+</body>
+<html>

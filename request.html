@@ -1,0 +1,47 @@
+<?php
+session_start();
+if(!isset($_SESSION['username']))
+{
+	header("Location:loginpage.html");
+}
+echo ";fka";
+?>
+<html>
+<body>
+<form action="request.php" method="post">
+<h4>What's your courier</h4>
+<textarea rows="3" cols="25" name="description" ></textarea><br>
+<h4>Select Type</h4><br>
+<input type="radio" name="type" value="delicate">Delicate<br>
+<input type="radio" name="type" value="strong">Strong<br>
+<h4>Select Courier Size</h4>
+<input type="radio" name="size" value="tiny">Tiny<br>
+<input type="radio" name="size" value="Small">Small<br>
+<input type="radio" name="size" value="Big">Big<br>
+<h4>Select Time for pick up</h4>
+<select name="time">
+<option value="09:00 to 12:00">09:00 to 12:00</option>
+<option value="12:00 to 03:00">12:00 to 03:00</option>
+<option value="03:00 to 06:00">03:00 to 06:00</option>
+<option value="06:00 to 09:00">06:00 to 09:00</option>
+</select>
+<h4>Delivery Type</h4><br>
+<select name="deliverytype">
+<option value="standard">Standard</option>
+<option value="fast">Fast</option>
+</select>
+<h4>Address</h4>
+<textarea rows="5" cols="25" name="address"></textarea><br>
+<br>
+<input type="submit" value="Request" name="request">
+</form>
+<br>
+<h3>
+<<<a href="home.php">Previous Page</a>
+</h3>
+<form method="get" action="logout.php">
+    <button type="submit" >Logout</button>
+</form>
+
+</body>
+</html>
